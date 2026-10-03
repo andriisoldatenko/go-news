@@ -3,6 +3,7 @@ package storage
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"slices"
 	"time"
 
@@ -19,12 +20,11 @@ type BoltStore struct {
 }
 
 func NewBoltStore(dbPath string, readOnly bool) (*BoltStore, error) {
-	db, err := bbolt.Open(dbPath, 0600, &bbolt.Options{
-		Timeout:  1 * time.Second,
-		ReadOnly: readOnly,
-	})
+	log.Printf("dbPath=%q", dbPath)
+	log.Printf("readOnly=%v", readOnly)
+	db, err := bbolt.Open(dbPath, 0600, &bbolt.Options{Timeout: 1 * time.Second, ReadOnly: readOnly})
 	if err != nil {
-		return nil, fmt.Errorf("failed to open database: %w", err)
+		return nil, fmt.Errorf("failed to open database %q: %w", dbPath, err)
 	}
 
 	if !readOnly {
