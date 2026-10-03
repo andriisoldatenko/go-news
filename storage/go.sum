@@ -1,3 +1,5 @@
+github.com/andriisoldatenko/go-news/domain v0.0.1 h1:7P5DfKWaix4qpuXA11lYIEgIu/4o6q3WGXsavj4WNGY=
+github.com/andriisoldatenko/go-news/domain v0.0.1/go.mod h1:S6o4jxKlKLQmGKAhdg0jrr4Ys9u3gAETVgJRGCnlR6o=
 go.etcd.io/bbolt v1.3.11 h1:yGEzV1wPz2yVCLsD8ZAiGHhHVlczyC9d1rP43/VCRJ0=
 go.etcd.io/bbolt v1.3.11/go.mod h1:dksAq7YMXoljX0xu6VF5DMZGbhYYoLUalEiSySYAS4I=
 golang.org/x/sys v0.4.0 h1:Zr2JFtRQNX3BCZ8YtxRE9hNJYC8J6I1MVbMg6owUp18=
