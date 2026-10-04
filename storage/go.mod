@@ -3,7 +3,17 @@ module github.com/andriisoldatenko/go-news/storage
 go 1.27.1
 
 require (
-	github.com/andriisoldatenko/go-news/domain v0.0.1 // indirect
-	go.etcd.io/bbolt v1.3.11 // indirect
-	golang.org/x/sys v0.4.0 // indirect
+	github.com/andriisoldatenko/go-news/domain v0.0.1
+	github.com/qdrant/go-client v1.15.2
+	go.etcd.io/bbolt v1.3.11
+)
+
+require (
+	github.com/google/uuid v1.6.0 // indirect
+	golang.org/x/net v0.58.0 // indirect
+	golang.org/x/sys v0.47.0 // indirect
+	golang.org/x/text v0.41.0 // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20260706201446-f0a921348800 // indirect
+	google.golang.org/grpc v1.84.0 // indirect
+	google.golang.org/protobuf v1.36.12 // indirect
 )

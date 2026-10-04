@@ -12,16 +12,16 @@ type Handlers struct {
 	articles domain.ArticleReader
 }
 
-func New(articles domain.ArticleReader) *Handlers {
+func NewArticleHandlers(articles domain.ArticleReader) *Handlers {
 	return &Handlers{
 		articles: articles,
 	}
 }
 
 func (h *Handlers) RegisterRoutes(mux *http.ServeMux) {
-	mux.HandleFunc("/articles", h.articlesHandler)
+	mux.HandleFunc("/articles", h.HandleArticles)
 }
-func (h *Handlers) articlesHandler(w http.ResponseWriter, r *http.Request) {
+func (h *Handlers) HandleArticles(w http.ResponseWriter, r *http.Request) {
 	if r.Method != http.MethodGet {
 		http.Error(w, "method not allowed", http.StatusMethodNotAllowed)
 		return

@@ -1,6 +1,7 @@
 package storage
 
 import (
+	"context"
 	"encoding/json"
 	"fmt"
 	"log"
@@ -45,7 +46,7 @@ func (s *BoltStore) Close() error {
 	return s.db.Close()
 }
 
-func (s *BoltStore) AddArticles(articles []*domain.Article) error {
+func (s *BoltStore) AddArticles(ctx context.Context, articles []*domain.Article) error {
 	return s.db.Update(func(tx *bbolt.Tx) error {
 		bucket := tx.Bucket([]byte(articlesBucketName))
 		if bucket == nil {
